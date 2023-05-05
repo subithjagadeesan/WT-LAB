@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>FORMS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        *{
+        font-family:cursive;}
+        body {
+          background-image: url("QUESTION.JPG.jpg");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+        .btn{
+            background-color: black;
+            color:white;
+        }
+        input{
+          cursor: pointer;
+        }
+        </style>
+    
+</head>
+<script>
+  function validateform(){  
+  var email=document.myform.email.value;  
+  var password=document.myform.password.value;
+  var name=document.myform.name.value;  
+  var number=document.myform.number.value;
+  var sec=document.myform.sec.value;
+  
+  if (email==null || email==""){  
+    alert("Email can't be blank");  
+    return false;  
+  }
+  if (password == "" || password==null) {
+        alert("Please enter your password");
+        return false;
+    }
+    if(password.length!= ""){
+       var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;                
+        if(regex.test(password) === false) 
+        {    alert("Please enter a valid pwd");
+				return false;
+		}       
+  }
+  if (name == "" || name==null) {
+          alert("Please enter your name");
+          return false;
+      }
+      if (number == "" || number==null) {
+          alert("Please enter your number");
+          return false;
+      }
+      if (sec == "" || sec==null) {
+          alert("Please enter your class section");
+          return false;
+      }
+  }
+  function focus1(){
+    document.getElementById("email").style.borderBlockColor="green";
+    document.getElementById("email").style.borderBlockWidth="5px 5px";
+  }
+  function blur1(){
+    document.getElementById("email").style.borderBlockColor="red";
+  }
+  function focus2(){
+    document.getElementById("password").style.borderBlockColor="green";
+    document.getElementById("password").style.borderBlockWidth="5px 5px";
+  }
+  function blur2(){
+    document.getElementById("password").style.borderBlockColor="red";
+  }
+  function focus3(){
+    document.getElementById("name").style.borderBlockColor="green";
+    document.getElementById("name").style.borderBlockWidth="5px 5px";
+  }
+  function blur3(){
+    document.getElementById("name").style.bo8rderBlockColor="red";
+  }
+  function focus4(){
+    document.getElementById("number").style.borderBlockColor="green";
+    document.getElementById("number").style.borderBlockWidth="5px 5px";
+  }
+  function blur4(){
+    document.getElementById("number").style.borderBlockColor="red";
+  }
+   function focus5(){
+    document.getElementById("sec").style.borderBlockColor="green";
+    document.getElementById("sec").style.borderBlockWidth="5px 5px";
+  }
+  function blur5(){
+    document.getElementById("sec").style.borderBlockColor="red";
+  }
+</script> 
+  
+<body>
+  <div class="container"></div>
+        <form onsubmit="return validateform()" method="post" action="" name="myform">
+          <center>
+          <fieldset>
+            Email:
+             <input type="email" class="E-mail" id="email" onfocus="focus1()" onblur="blur1()"/><br><br>
+            Password:
+             <input type="password" class="password" id="password" onfocus="focus2()" onblur="blur2()"/><br><br>
+            Student Name:
+             <input type="text" class="name" id="name" onfocus="focus3()" onblur="blur3()"/><br><br> 
+            Register Number:
+             <input type="tel" class="number" id="number" onfocus="focus4()" onblur="blur4()"/><br><br>
+            class-section:
+            <input type="text" class="cls-sec" id="sec" onfocus="focus5()" onblur="blur5()"/><br><br> 
+            <label for="w">Department:</label>
+             <input type="radio" name="w" class="dept" value="CSE"/>CSE
+             <input type="radio" name="w" class="dept" value="IT"/>IT
+             <input type="radio" name="w" class="dept" value="ECE"/>ECE
+             <input type="radio" name="w" class="dept" value="CSD"/>CSD
+             <input type="radio" name="w" class="dept" value="AIDS"/>AIDS<br><br>
+            <label for="z"> Have you attended any quiz competition:</label>
+             <input type="radio" name="z" class="quiz"/>YES 
+             <input type="radio" name="z" class="quiz"/>NO<br><br>
+             <label for="remark">Remarks:</label> 
+             <textarea rows="3" cols="12" name="remark" class="comment"></textarea><br><br>
+            <input class="btn" type="submit" name="submit">
+            <input type="RESET">
+            </fieldset>
+          </center>
+        </form>
+      </div> 
+    </body>
+    </html>
